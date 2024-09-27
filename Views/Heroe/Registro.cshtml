@@ -1,0 +1,79 @@
+﻿@model Overwatch.Models.Heroe
+
+<div class="text-center">
+    <h1 class="display-4">Registro de Héroes</h1>
+    
+    <form method="post" asp-controller="Heroe" asp-action="Registro">
+
+        @*heroe*@
+        <div class="row">
+            <div class="col-2">
+                <label><strong>Nombre:</strong></label>
+            </div>
+            <div class="col">
+                <input type="text" asp-for="@Model.Nombre" class="form-control" id="inputNombre" placeholder="introduce tu nombre..." /><br />
+            </div>
+        </div>
+        <br />
+
+        @*Rol*@
+        <div class="row">
+            <div class="col-2">
+                <label><strong>Rol:</strong></label>
+            </div>
+            <div class="col">
+                <input type="text" asp-for="@Model.Rol" class="form-control" id="inputRol" placeholder="introduce rol..." /><br />
+            </div>
+        </div>
+        <br />
+
+        @*Vida*@
+        <div class="row">
+            <div class="col-2">
+                <label><strong>Vida:</strong></label>
+            </div>
+            <div class="col">
+                <input type="number" asp-for="@Model.Vida" class="form-control" id="inputVida" placeholder="introduce vida..." /><br />
+            </div>
+        </div>
+        <br />
+
+        @*Daño*@
+        <div class="row">
+            <div class="col-2">
+                <label><strong>Daño:</strong></label>
+            </div>
+            <div class="col">
+                <input type="number" asp-for="@Model.Dano" class="form-control" id="inputDano" placeholder="introduce daño..." /><br />
+            </div>
+        </div>
+        <br />
+
+        @*Cura*@
+        <div class="row">
+            <div class="col-2">
+                <label><strong>Cura:</strong></label>
+            </div>
+            <div class="col">
+                <input type="number" asp-for="@Model.Cura" class="form-control" id="inputCura" placeholder="introduce cura..." /><br />
+            </div>
+        </div>
+        <br />
+
+        <div class="row">
+            <div class="col w-100">
+                <input class="btn btn-primary w-100" type="submit"  value="Crear"/>
+            </div>
+        </div>
+
+
+    </form>
+    
+
+
+    <br /><br /><br /><br />
+    <p>CRUD de Héroes</p>
+
+    <partial name="Links" />
+
+</div>

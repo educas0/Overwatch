@@ -1,0 +1,36 @@
+﻿@using Overwatch.Models;
+@model Heroe;
+
+<div class="text-center">
+    <h1 class="display-4">Héroe de sesión</h1>
+
+    <form method="post" asp-controller="Home" asp-action="IniciarSessionHeroe">
+
+        @*heroe*@
+        <div class="row">
+            <div class="col-2">
+                <label><strong>Nombre:</strong></label>
+            </div>
+            <div class="col">
+
+                <select class="form-control" asp-for="@Model.IdHeroe">
+                    <option value="0">Selecciona Heroe</option>
+                    @foreach (Heroe _H in (List<Heroe>)ViewData["ListaHeroes"])
+                    {
+                        <option value="@_H.IdHeroe">@_H.Nombre</option>
+                    }
+                </select>
+            </div>
+        </div>
+        <br />
+
+        <div class="row">
+            <div class="col w-100">
+                <input class="btn btn-primary w-100" type="submit" value="Seleccionar" />
+            </div>
+        </div>
+
+
+    </form>
+
+</div>
